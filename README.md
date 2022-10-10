@@ -1,0 +1,1 @@
+Practices that include OPPS paradigms to have clean code and avoid code smells.
