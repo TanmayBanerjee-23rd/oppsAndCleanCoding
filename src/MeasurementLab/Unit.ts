@@ -12,6 +12,6 @@ export class Unit {
     
     in( toUnitMetricType: MetricType ): Unit {
 
-        return new Unit( toUnitMetricType.amountsFrom( this.metrictype.inBaseUnits( this.value ) ), toUnitMetricType );
+        return new Unit( toUnitMetricType.amountsFrom( this.metrictype.inBaseUnits( this.value ), this.metrictype ), toUnitMetricType );
     };
 }

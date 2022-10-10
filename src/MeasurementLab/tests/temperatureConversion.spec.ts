@@ -1,9 +1,10 @@
 import { faker } from "@faker-js/faker";
+import { UNIT_TYPE } from "../../enums/unitEnums";
 import { IUnitFactors } from "../../interfaces/UnitLab";
 import { MetricType } from "../MetricType";
 import { Unit } from "../Unit";
 
-describe( "Positive test cases :: Temperature conversions :: ", () => {
+describe( "Positive test cases :: Temperature type conversions :: ", () => {
 
     let randomNumber: number = faker.datatype.number();
     
@@ -29,8 +30,8 @@ describe( "Positive test cases :: Temperature conversions :: ", () => {
 
         const equivalentFahrenheitVal = ( randomNumber * fahrenheitFactors.multiplicationFactor ) + fahrenheitFactors.additionFactor;
 
-        const celcious = new MetricType( "C", celciousFactors );
-        const fahrenheit = new MetricType( "F", fahrenheitFactors );
+        const celcious = new MetricType( UNIT_TYPE.TEMPERATURE, "C", celciousFactors );
+        const fahrenheit = new MetricType( UNIT_TYPE.TEMPERATURE, "F", fahrenheitFactors );
 
         expect( new Unit( randomNumber, celcious ).in( fahrenheit ) ).toEqual( new Unit( equivalentFahrenheitVal, fahrenheit ) );
     });
@@ -44,8 +45,8 @@ describe( "Positive test cases :: Temperature conversions :: ", () => {
 
         const equivalentCelciousVal = ( randomNumber + fahrenheitFactors.additionFactor ) * fahrenheitFactors.multiplicationFactor;
 
-        const fahrenheit = new MetricType( "F", fahrenheitFactors );
-        const celcious = new MetricType( "C", celciousFactors );
+        const fahrenheit = new MetricType( UNIT_TYPE.TEMPERATURE, "F", fahrenheitFactors );
+        const celcious = new MetricType( UNIT_TYPE.TEMPERATURE, "C", celciousFactors );
 
         expect( new Unit( randomNumber, fahrenheit ).in( celcious ) ).toEqual( new Unit( equivalentCelciousVal, celcious ) );
     });
@@ -54,8 +55,8 @@ describe( "Positive test cases :: Temperature conversions :: ", () => {
 
         const equivalentCelciousVal = ( randomNumber + kelvinFactors.additionFactor ) * kelvinFactors.multiplicationFactor;
 
-        const kelvin = new MetricType( "K", kelvinFactors );
-        const celcious = new MetricType( "C", celciousFactors );
+        const kelvin = new MetricType( UNIT_TYPE.TEMPERATURE, "K", kelvinFactors );
+        const celcious = new MetricType( UNIT_TYPE.TEMPERATURE, "C", celciousFactors );
 
         expect( new Unit( randomNumber, kelvin ).in( celcious ) ).toEqual( new Unit( equivalentCelciousVal, celcious ) );
     });

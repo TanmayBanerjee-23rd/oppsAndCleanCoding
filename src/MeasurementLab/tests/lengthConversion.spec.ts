@@ -1,11 +1,12 @@
 import { faker } from "@faker-js/faker";
+import { UNIT_TYPE } from "../../enums/unitEnums";
 import { IUnitFactors } from "../../interfaces/UnitLab";
 import { MetricType } from "../MetricType";
 import { Unit } from "../Unit";
 
 const randomNumber = faker.datatype.number();
 
-describe( "Positive test cases :: Length metric type conversions :: ", () => {
+describe( "Positive test cases :: Length type conversions :: ", () => {
 
 
     test( `${ randomNumber } foot into equivalent inch :: `, () => {
@@ -19,8 +20,8 @@ describe( "Positive test cases :: Length metric type conversions :: ", () => {
             additionFactor: 0
         };
 
-        const inch = new MetricType( "Inch", inchFactors );
-        const foot = new MetricType( "Foot", footFactors );
+        const inch = new MetricType( UNIT_TYPE.LENGTH, "Inch", inchFactors );
+        const foot = new MetricType( UNIT_TYPE.LENGTH, "Foot", footFactors );
 
         const inchesEquivalentOfFoot = ( randomNumber * 12 );
 
@@ -39,8 +40,8 @@ describe( "Positive test cases :: Length metric type conversions :: ", () => {
             additionFactor: 0
         };
 
-        const yard = new MetricType( "Yard", yardFactors );
-        const foot = new MetricType( "Foot", footFactors );
+        const yard = new MetricType( UNIT_TYPE.LENGTH, "Yard", yardFactors );
+        const foot = new MetricType( UNIT_TYPE.LENGTH, "Foot", footFactors );
 
         const footEquivalentOfYard = ( randomNumber * 3 );
 
@@ -59,8 +60,8 @@ describe( "Positive test cases :: Length metric type conversions :: ", () => {
             additionFactor: 0
         };
 
-        const mile = new MetricType( "Mile", mileFactors );
-        const foot = new MetricType( "Foot", footFactors );
+        const mile = new MetricType( UNIT_TYPE.LENGTH, "Mile", mileFactors );
+        const foot = new MetricType( UNIT_TYPE.LENGTH, "Foot", footFactors );
 
         const footEquivalentOfMile = ( randomNumber * 5280 );
 
@@ -83,10 +84,10 @@ describe( "Negative test cases :: withing Length class :: ", () => {
             additionFactor: 32
         };
 
-        const mile = new MetricType( "Mile", mileFactors );
-        const fahrenheit = new MetricType( "F", fahrenheitFactors );
+        const mile = new MetricType( UNIT_TYPE.LENGTH, "Mile", mileFactors );
+        const fahrenheit = new MetricType( UNIT_TYPE.TEMPERATURE, "F", fahrenheitFactors );
 
-        expect( new Unit( randomNumber, mile ).in( fahrenheit ) ).toThrow( " UnitType mismatch " );
+        expect( () => new Unit( randomNumber, mile ).in( fahrenheit ) ).toThrow( " UnitType mismatch " );
 
     })
 
