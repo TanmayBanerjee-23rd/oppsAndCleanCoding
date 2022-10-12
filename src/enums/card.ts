@@ -1,0 +1,8 @@
+export enum SUIT_TYPE {
+    CLUBS, DIAMONDS, HEARTS, SPADES
+};
+
+export enum SUIT_MEMBER_TYPE {
+    TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT,NINE, TEN,
+    JACK, QUEEN, KING, ACE
+};
