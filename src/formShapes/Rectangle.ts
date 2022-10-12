@@ -1,4 +1,4 @@
-import { Ishape } from "../interfaces/IShape";
+import { Ishape } from "../utilities/interfaces/IShape";
 
 export class Rectangle implements Ishape {
 

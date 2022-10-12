@@ -1,4 +1,4 @@
-import { SUIT_MEMBER_TYPE, SUIT_TYPE } from "../../enums/card";
+import { SUIT_MEMBER_TYPE, SUIT_TYPE } from "../../utilities/enums/card";
 import { Card } from "../Card";
 
 describe( "Positive test cases :: card comparision :: ", () => {

@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
-import { UNIT_TYPE } from "../../enums/unitEnums";
-import { IUnitFactors } from "../../interfaces/UnitLab";
+import { UNIT_TYPE } from "../../utilities/enums/unitEnums";
+import { IUnitFactors } from "../../utilities/interfaces/UnitLab";
 import { MetricType } from "../MetricType";
 import { Unit } from "../Unit";
 

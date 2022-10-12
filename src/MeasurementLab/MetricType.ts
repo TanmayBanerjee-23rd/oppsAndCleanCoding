@@ -1,11 +1,11 @@
-import { UNIT_TYPE } from "../enums/unitEnums";
-import { IUnitFactors } from "../interfaces/UnitLab";
+import { UNIT_TYPE } from "../utilities/enums/unitEnums";
+import { IUnitFactors } from "../utilities/interfaces/UnitLab";
 
 export class MetricType {
     
     private readonly name: string;
     private readonly unitFactors: IUnitFactors;
-    unitType: UNIT_TYPE;
+    private readonly unitType: UNIT_TYPE;
     
     constructor( unitType: UNIT_TYPE, name: string, unitFactors: IUnitFactors ) {
         this.unitType = unitType;
