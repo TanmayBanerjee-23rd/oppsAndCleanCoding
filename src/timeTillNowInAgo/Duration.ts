@@ -27,7 +27,7 @@ export class Duration {
             const deltaInMultiplesOfHighestUnitLevel = ( deltaInMiliSeconds / ( entry[ 1 ] as number ) ); 
 
             if ( deltaInMultiplesOfHighestUnitLevel > 0 ) {
-                console.log( deltaInMiliSeconds, deltaInMultiplesOfHighestUnitLevel, entry );
+                // console.log( deltaInMiliSeconds, deltaInMultiplesOfHighestUnitLevel, entry );
 
                 return `${ numToStringConverter.toWords( deltaInMultiplesOfHighestUnitLevel ) } ${ pluralizer( entry[ 0 ] , Math.floor( deltaInMultiplesOfHighestUnitLevel ) ) } ago`;
             }
