@@ -70,7 +70,7 @@ describe( "Positive test cases :: Length type conversions :: ", () => {
 
 });
 
-describe( "Negative test cases :: withing Length class :: ", () => {
+describe( "Negative test cases :: Different genre unit type conversion :: ", () => {
 
     test( `Convert ${ randomNumber }  length unit to temperature unit ::`, () => {
 
