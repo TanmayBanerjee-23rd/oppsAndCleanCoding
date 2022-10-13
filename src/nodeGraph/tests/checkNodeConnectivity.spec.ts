@@ -6,7 +6,7 @@ describe( " Positive test cases :: Checking airport connectivity :: ", () => {
         const edges = [ 
             [ hyderabadAP, 2 ] // [ node, edgeWeight ]
         ]
-        bangaloreAP.connectNodes( hyderabadAP, puneAP, mumbaiAP );
+        bangaloreAP.createRelationTo( hyderabadAP, puneAP, mumbaiAP );
     });
 
     test( " Find the shortest route between bangalore and mumbai airports :: ", () => {
