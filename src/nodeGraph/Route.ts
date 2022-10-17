@@ -15,7 +15,7 @@ export class Route {
         };
 
         traverse(): string {
-            return `End of route.`;
+            return `No routes found to reach destination.`;
         };
     };
 

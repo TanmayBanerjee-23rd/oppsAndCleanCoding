@@ -31,7 +31,7 @@ export class GraphNode {
         return this.reccuringDepthFirstSearch( targetNode, [], this.calculateRouteLegsCost ).traverse( this.name );
     };
 
-    reccuringDepthFirstSearch( targetNode: GraphNode, visitedNodes: GraphNode[], comparisionCriteria: Function ): Route {
+    private reccuringDepthFirstSearch( targetNode: GraphNode, visitedNodes: GraphNode[], comparisionCriteria: Function ): Route {
         
         if ( this.name === targetNode.name ){
             return new Route(); 
@@ -65,11 +65,11 @@ export class GraphNode {
         
     };
 
-    calculateRouteLegsCount( route: Route ): number {
+    private calculateRouteLegsCount( route: Route ): number {
         return route.legsCount();
     };
 
-    calculateRouteLegsCost( route: Route ): number {
+    private calculateRouteLegsCost( route: Route ): number {
         return route.totalLegsWeight();
     };
 };

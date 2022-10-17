@@ -2,8 +2,8 @@ import { createNodes } from "../GraphNode";
 
 describe( " Positive test cases :: Checking airport connectivity :: ", () => {
 
-    const airportNames = [ "bangalore", "hyderabad", "pune", "mumbai", "kolkata", "delhi", "chandigarh" ];
-    const [ bangaloreAP, hyderabadAP, puneAP, mumbaiAP, kolkataAP, delhiAP, chandigarhAP ] = createNodes( airportNames );
+    const airportNames = [ "bangalore", "hyderabad", "pune", "mumbai", "kolkata", "delhi", "chandigarh", "kochiAP" ];
+    const [ bangaloreAP, hyderabadAP, puneAP, mumbaiAP, kolkataAP, delhiAP, chandigarhAP, kochiAP ] = createNodes( airportNames );
 
     const legs = { 
         "delhiAP": { vertex: delhiAP, edgeWeight: 2 },
@@ -13,6 +13,7 @@ describe( " Positive test cases :: Checking airport connectivity :: ", () => {
         "kolkataAP": { vertex: kolkataAP, edgeWeight: 3 },
         "puneAP": { vertex: puneAP, edgeWeight: 4 },
         "bangaloreAP": { vertex: bangaloreAP, edgeWeight: 5 },
+        "kochiAP": { vertex: kochiAP, edgeWeight: 6 }
     };
 
     describe( "Check connectivity from bangalore to other airports :: ", () => {
@@ -38,6 +39,10 @@ describe( " Positive test cases :: Checking airport connectivity :: ", () => {
     
         test( " Find the cheapest route between bangalore and kolkata airports :: ", () => {
             expect( bangaloreAP.findCheapestRouteTo( chandigarhAP ) ).toEqual( "bangalore -> mumbai -> delhi -> chandigarh" );
+        });
+
+        test( " Find the cheapest route between bangalore and kolkata airports :: ", () => {
+            expect( bangaloreAP.findCheapestRouteTo( kochiAP ) ).toEqual( "No routes found to reach destination." );
         });
     });
 
