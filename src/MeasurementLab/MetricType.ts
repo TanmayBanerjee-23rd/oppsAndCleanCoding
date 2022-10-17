@@ -1,5 +1,5 @@
 import { UNIT_TYPE } from "../utilities/enums/unitEnums";
-import { IUnitFactors } from "../utilities/interfaces/UnitLab";
+import { IUnitFactors } from "../utilities/interfaces/IUnitLab";
 
 export class MetricType {
     
